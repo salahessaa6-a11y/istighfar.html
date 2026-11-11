@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>استغفر الله | اذكار المساء</title>
+<style>
+body{margin:0;font-family:Arial;background:#0f2027;background:linear-gradient(#2c5364,#203a43,#0f2027);color:white;text-align:center;padding:20px}
+.box{background:rgba(255,255,255,0.12);border-radius:20px;padding:20px;margin:15px auto;max-width:450px}
+#count{font-size:80px;font-weight:bold;color:#ffd700}
+#btn{background:#ffd700;color:#000;border:none;padding:20px 40px;font-size:28px;font-weight:bold;border-radius:50px;cursor:pointer;width:90%}
+.dhikr{background:white;color:#222;border-radius:15px;padding:15px;margin:10px auto;max-width:450px;text-align:right;line-height:1.8}
+</style>
+</head>
+<body>
+<h1>🌙 اذكار المساء</h1>
+<p>استغفر و ربح الاجر</p>
+<div class="box">
+<div>عدد استغفاراتك</div>
+<div id="count">0</div>
+<button id="btn" onclick="istighfar()">أستغفر الله 🤲</button>
+<p id="msg">اضغط على الزر لتبدأ</p>
+</div>
+<div class="box"><h3>هدفك: 1000 استغفار</h3><p id="progress">باقي ليك 1000</p></div>
+<h2>📖 اذكار المساء</h2>
+<div class="dhikr"><b>سيد الاستغفار:</b><br>اللهم أنت ربي لا إله إلا أنت، خلقتني وأنا عبدك، وأنا على عهدك ووعدك ما استطعت، أعوذ بك من شر ما صنعت، أبوء لك بنعمتك علي، وأبوء بذنبي فاغفر لي، فإنه لا يغفر الذنوب إلا أنت.</div>
+<div class="dhikr"><b>سبحان الله وبحمده:</b><br>100 مرة</div>
+<div class="dhikr"><b>لا إله إلا الله وحده لا شريك له:</b><br>100 مرة</div>
+<script>
+let c=localStorage.getItem('istighfar')?parseInt(localStorage.getItem('istighfar')):0;
+document.getElementById('count').innerText=c;updateProgress();
+function istighfar(){c++;document.getElementById('count').innerText=c;localStorage.setItem('istighfar',c);updateProgress();document.getElementById('msg').innerText="تقبل الله منك، زيد كمل...";}
+function updateProgress(){let left=1000-c;if(left<0)left=0;document.getElementById('progress').innerText="باقي ليك "+left+" باش تكمل 1000";}
+</script>
+</body>
+</html>
